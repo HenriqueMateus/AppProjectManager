@@ -1,8 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App.js'
 
-export default function app() {
-  return (
-    <View />
-  );
-}
+
+ReactDOM.render(
+  <App/>,
+  document.getElementById('root')
+);
