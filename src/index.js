@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App.js'
+import Rotas from './config/rotas/Routes'
 
 
 ReactDOM.render(
-  <App/>,
+  <Rotas/>,
   document.getElementById('root')
 );
