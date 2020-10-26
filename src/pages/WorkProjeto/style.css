@@ -1,0 +1,86 @@
+.projetobarr {
+    display: inline-flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    background-color: #00000066;
+}
+.direitaBarr {
+    margin-left: auto;
+    width: 250px;
+    display: flex;
+}
+.centroBarr {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.esquerdaBarr {
+    margin-right: auto;
+    padding-left: 35px;
+}
+.centroBarr > button {
+    height: fit-content;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.projetobarr > h4 {
+    margin: auto;
+}
+.card {
+    height: 500px;
+    width: 450px;
+    margin: 25px;
+    margin-right: 50px;
+    margin-left: 50px;
+    background: #9999992B 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    min-width: 200px;
+}
+.card > h5 {
+    font: normal normal bold 23px/30px "Roboto";
+    letter-spacing: 0px;
+    color:#000000;
+    text-align: left;
+    opacity: 1;
+    margin: 10px;
+}
+.cardTask {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    height: 95px;
+    margin: 0px 30px 10px 10px;
+    border-radius: 25px;
+    border: black 1px solid;
+}
+.cardColor {
+    height: 50%;
+    border-radius: 25px 25px 0px 0px;
+}
+.cardTask > h6 {
+    text-align: left;
+    font: normal normal bold 16px/21px "Roboto";
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    margin: 10px;
+}
+.cards {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-left: 140px;
+}
+.scroll {
+    overflow-y: scroll;
+    height: 420px;
+}
+.adicionarCard {
+    height: 30px;
+}
+.adicionarCard > button {
+    height: 30px;
+    border: black solid 1px;
+    width: 100%;
+    text-align: inherit;
+}
