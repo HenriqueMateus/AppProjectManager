@@ -63,10 +63,15 @@ export default function WorkProjeto() {
 
                         <h6>Exemplo tarefa</h6>
                     </div>
+                    <div className='adicionarCard'>
+                        <button><img src={iconAdd}/>Adicionar novo card</button>
+                    </div>
                 </div>
                 <div className='card' id='concluido'>
                     <h5>Concluido</h5>
-                    
+                    <div className='adicionarCard'>
+                        <button><img src={iconAdd}/>Adicionar novo card</button>
+                    </div>
                 </div>
             </div>
         </>
