@@ -12,7 +12,7 @@ function Rotas() {
                 <Route path="/" exact component={App} />
                 <Route path="/Projetos" exact component={Projetos} />
                 <Route path="/Projetos/Orgprojeto" exact component={WorkProjeto} />
-                <Route path="/cadastro" component={Cadastro} />
+                <Route path="/Cadastro" component={Cadastro} />
             </Switch>
         </ BrowserRouter>
     )
