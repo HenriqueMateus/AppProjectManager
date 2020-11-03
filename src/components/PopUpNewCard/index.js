@@ -53,7 +53,7 @@ export default function PopUpNewCard(props) {
                 </div>
                 <div className='labelModal'>
                     <label>Nome:</label>
-                    <input type='text' value={card.nome} onChange={nomeChange}></input>
+                    <input type='text' value={card.nome} maxlength="25" onChange={nomeChange}></input>
                     <br/> 
                     <label>Data Entrega:</label>
                     <DatePicker

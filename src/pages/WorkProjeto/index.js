@@ -99,7 +99,10 @@ export default function WorkProjeto() {
                             <div className='cardTask'>
                                 <div className='cardColor' style={{ background: 'green' }} />
 
-                                <h6>{tarefa.nome}</h6>
+                                <div className='cardBody'>
+                                    <h6>{tarefa.nome}</h6>
+                                    <p style={{background: tarefa.color}}>{tarefa.dataEntrega}</p>
+                                </div>
                             </div>
                         )
                         }
@@ -117,7 +120,10 @@ export default function WorkProjeto() {
                             <div className='cardTask'>
                                 <div className='cardColor' style={{ background: 'green' }} />
 
-                                <h6>{tarefa.nome}</h6>
+                                <div className='cardBody'>
+                                    <h6>{tarefa.nome}</h6>
+                                    <p style={{background: tarefa.color}}>{tarefa.dataEntrega}</p>
+                                </div>
                             </div>
                         )
                         }
