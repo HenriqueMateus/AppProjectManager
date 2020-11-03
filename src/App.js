@@ -8,7 +8,7 @@ function App() {
       <label>Login</label>
       <input name="Usuario"></input>
       <input name="Senha"></input>
-      <Link to="/Projetos"><button>Entrar</button></Link>
+      <Link to="/cadastro"><button>Entrar</button></Link>
       <div>
         <button></button>
       </div>
