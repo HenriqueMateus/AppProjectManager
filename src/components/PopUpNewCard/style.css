@@ -1,0 +1,38 @@
+.headerModal {
+    padding-left: 10px;
+    border-bottom: #ddd 1px solid;
+    margin: 10px 5px 10px 5px;
+}
+.headerModal > h1 {
+    font: normal normal bold 23px/30px "Playfair Display";
+    margin: 5px;
+    color: #133DAF;
+}
+.labelModal {
+    margin: 10px;
+}
+.labelModal > label {
+    font-family: 'Playfair Display';
+    margin-left: 5px;
+    margin-right: 40px;
+    color: #133DAF;
+}
+.endModal {
+    text-align: end;
+    margin: 10px 15px;
+}
+.bodyModal {
+    display: flex;
+    text-align: center;
+    margin-left: 14px;
+    margin-right: 5px;
+    padding-bottom: 10px;
+    border-bottom: #ddd 1px solid;
+}
+.bodyModal > label {
+    margin-right: 10px;
+}
+.modalStyle {
+    font-family: "Playfair Display";
+    color: #133DAF;
+}
