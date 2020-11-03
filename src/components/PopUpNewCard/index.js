@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Modal from 'react-awesome-modal'
+import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
+import ptBr from 'date-fns/locale/pt-BR';
 import './style.css'
-import { Editor, EditorState } from 'draft-js';
-import 'draft-js/dist/Draft.css';
+import "react-datepicker/dist/react-datepicker.css";
+
+registerLocale('pt-BR', ptBr)
+setDefaultLocale('pt-BR')
 
 export default function PopUpNewCard(props) {
     const { status, setState, categoria } = props
-    const [card, setCard] = useState({ nome: null, descricao: '', categoria: '' })
+    const [card, setCard] = useState({ nome: null, descricao: '', categoria: '', dataEntrega: new Date(), color: 'white'})
+    const [dataFinal, setDataFinal] = useState()
     useEffect(() => {
-        return setCard({ nome: '', descricao: '', categoria: '' })
+        return setCard({ nome: '', descricao: '', categoria: '',  dataEntrega: new Date(), color: 'white'})
     }, [status])
     const nomeChange = (event) => {
         let novoCard = { ...card }
@@ -31,6 +36,14 @@ export default function PopUpNewCard(props) {
             alert('Favor Inserir o nome da tarefa')
         }
     }
+    
+    const onChangeDT = (date) => {
+        console.log(date)
+        let novoCard = { ...card }
+        //let dataEntrega = format(new Date(date), 'd MMM hh:mm')
+        novoCard.dataEntrega = date
+        setCard(novoCard)
+    }
     return (
         <section className='modalStyle'>
             <Modal visible={status} width='600' height='320px' effect='fadeInUp'
@@ -41,6 +54,18 @@ export default function PopUpNewCard(props) {
                 <div className='labelModal'>
                     <label>Nome:</label>
                     <input type='text' value={card.nome} onChange={nomeChange}></input>
+                    <br/> 
+                    <label>Data Entrega:</label>
+                    <DatePicker
+                        selected={card.dataEntrega}
+                        onChange={date => onChangeDT(date)}
+                        timeInputLabel="Time:"
+                        dateFormat="dd/MM/yyyy h:mm aa"
+                        showTimeInput
+                        locale='pt-BR'
+                        minDate={new Date()}
+                    />
+                    
                 </div>
                 <div className='bodyModal'>
                     <label>Descrição:</label>

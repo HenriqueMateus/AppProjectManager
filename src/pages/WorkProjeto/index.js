@@ -2,41 +2,57 @@ import React, { useState, useEffect } from 'react'
 import './style.css'
 import iconAdd from '../../Icon/icon-content-add_24px.png'
 import PopUpNewCard from '../../components/PopUpNewCard'
+import { compareDesc, format, isFuture, isPast } from 'date-fns'
 
 
 export default function WorkProjeto() {
-    const [tarefa, setTarefa] = useState({ nome: '', descricao: '', status: '' })
+    const [tarefa, setTarefa] = useState({ nome: '', descricao: '', status: '', dataEntrega: '', color: 'white' })
     const [listTarefas, setListTarefas] = useState({ andamento: [], afazer: [], concluido: [] })
-    const [statusModal, setStatusModal] = useState({status: false, categoria: ''})
+    const [statusModal, setStatusModal] = useState({ status: false, categoria: '' })
     useEffect(() => {
         function getTarefas() {
-            let tarefas = { andamento: [], afazer: [], concluido: [] }
-            let tarefaExemplo = { nome: '', descricao: '', status: '' }
-            tarefaExemplo.nome = 'Criar Pagina'
-            tarefaExemplo.descricao = 'The sunset filled the entire sky with the deep color of rubies, setting the clouds ablaze. The waves crashed and danced along the shore, moving up and down in a graceful and gentle rhythm like they were dancing.'
-            tarefaExemplo.status = 'afazer'
-            tarefas[tarefaExemplo.status].push(tarefaExemplo)
-            setListTarefas(tarefas)
+            // let tarefas = { ...listTarefas }
+            // let tarefaExemplo = { ...tarefa }
+            // tarefaExemplo.nome = 'Criar Pagina'
+            // tarefaExemplo.descricao = 'The sunset filled the entire sky with the deep color of rubies, setting the clouds ablaze. The waves crashed and danced along the shore, moving up and down in a graceful and gentle rhythm like they were dancing.'
+            // tarefaExemplo.status = 'afazer'
+            // tarefaExemplo.dataEntrega = '3 Nov 02:54'
+            // tarefas[tarefaExemplo.status].push(tarefaExemplo)
+            // setListTarefas(tarefas)
         }
         getTarefas()
         console.log('ok')
     }, []);
-    useEffect(()=>{
+    useEffect(() => {
         let novoCard = sessionStorage.getItem('card')
-        if (novoCard){
+        if (novoCard) {
             let tarefa = JSON.parse(novoCard)
-            console.log(tarefa)
-            let registrotarefas = {...listTarefas} 
+            let registrotarefas = { ...listTarefas }
+            let novaDateFormato = format(new Date(tarefa?.dataEntrega), 'd MMM hh:mm')
+            // let dia = format(new Date(tarefa?.dataEntrega), 'd')
+            // let mes = format(new Date(tarefa?.dataEntrega), 'M')
+            // let ano = format(new Date(tarefa?.dataEntrega), 'yyyy')
+            // let hora = format(new Date(tarefa?.dataEntrega), 'hh')
+            // let minutos = format(new Date(tarefa?.dataEntrega), 'mm')
+            // let segundos = format(new Date(tarefa?.dataEntrega), 'ss')
+            tarefa.dataEntrega = novaDateFormato
+            // let atraso = compareDesc(new Date(ano, mes, dia, hora, minutos, segundos), new Date())
+            // console.log(isPast(new Date(ano, mes, dia, hora, minutos, segundos)))
+            // console.log(hora)
+            // console.log(atraso)
+            // if(atraso === -1){
+            //     tarefa.color = '#ff000075'
+            // }
             registrotarefas[tarefa.categoria].push(tarefa)
             setListTarefas(registrotarefas)
             sessionStorage.removeItem('card')
         }
-        
+
     }, [statusModal])
 
     function adicionarCard(status) {
-        let modalStt = {...statusModal}
-        modalStt.status = modalStt.status? false: true
+        let modalStt = { ...statusModal }
+        modalStt.status = modalStt.status ? false : true
         modalStt.categoria = status
         setStatusModal(modalStt)
     }
@@ -60,17 +76,20 @@ export default function WorkProjeto() {
                     <h5>A fazer</h5>
                     <div className='scroll'>
                         {listTarefas.afazer.map((tarefa, index) =>
-                            <div key={index}className='cardTask'>
+                            <div key={index} className='cardTask'>
                                 <div className='cardColor' style={{ background: 'green' }} />
+                                <div className='cardBody'>
+                                    <h6>{tarefa.nome}</h6>
+                                    <p style={{background: tarefa.color}}>{tarefa.dataEntrega}</p>
+                                </div>
 
-                                <h6>{tarefa.nome}</h6>
                             </div>
                         )
                         }
 
                     </div>
                     <div className='adicionarCard'>
-                        <button onClick={function(){adicionarCard('afazer')}}><img alt='imgAdd' src={iconAdd}  />Adicionar novo card</button>
+                        <button onClick={function () { adicionarCard('afazer') }}><img alt='imgAdd' src={iconAdd} />Adicionar novo card</button>
                     </div>
                 </div>
                 <div className='card' id='andamento'>
@@ -87,7 +106,7 @@ export default function WorkProjeto() {
 
                     </div>
                     <div className='adicionarCard'>
-                        <button onClick={() => adicionarCard('andamento')}><img alt='imgAdd' src={iconAdd}  />Adicionar novo card</button>
+                        <button onClick={() => adicionarCard('andamento')}><img alt='imgAdd' src={iconAdd} />Adicionar novo card</button>
                     </div>
 
                 </div>
@@ -109,8 +128,8 @@ export default function WorkProjeto() {
                     </div>
                 </div>
             </div>
-            <PopUpNewCard  status={statusModal.status} categoria={statusModal.categoria} setState={setStatusModal}>
-            </PopUpNewCard>              
+            <PopUpNewCard status={statusModal.status} categoria={statusModal.categoria} setState={setStatusModal}>
+            </PopUpNewCard>
         </>
 
     )

@@ -59,13 +59,19 @@
     height: 50%;
     border-radius: 25px 25px 0px 0px;
 }
-.cardTask > h6 {
+.cardBody {
+    display: flex;
+}
+.cardBody > h6 {
     text-align: left;
     font: normal normal bold 16px/21px "Roboto Mono";
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
     margin: 10px;
+}
+.cardBody > p {
+    margin-top: 10px;
 }
 .cards {
     display: inline-flex;
