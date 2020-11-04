@@ -6,6 +6,9 @@
     background-color: #00000066;
     font-family:'Playfair Display', serif;
 }
+.appbar > h2 {
+    margin-right: auto;
+}
 .blocProjetos {
     width: fit-content;
     height: 310px;
@@ -53,7 +56,28 @@
     border-bottom: #133daf solid;
     margin: auto;
 }
-.scrollProjetos > a {
+.cardProjeto > a {
     color: initial;
     text-decoration: none;
+}
+.bodyIncial {
+    display: flex;
+}
+.barList {
+    width: 110px;
+    background: #ccc;
+    height: 200px;
+}
+.barList > ul {
+    list-style: none;
+    padding: 0px;
+    margin: 5px;
+    height: 200px;
+}
+.barList > ul > li {
+    padding-bottom: 10px;
+}
+.projetosCategorias {
+    margin-left: auto;
+    margin-right: auto;
 }
