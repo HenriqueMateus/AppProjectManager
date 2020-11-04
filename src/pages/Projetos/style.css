@@ -53,3 +53,7 @@
     border-bottom: #133daf solid;
     margin: auto;
 }
+.scrollProjetos > a {
+    color: initial;
+    text-decoration: none;
+}

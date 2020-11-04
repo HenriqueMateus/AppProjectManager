@@ -5,11 +5,13 @@ import PopUpNewCard from '../../components/PopUpNewCard'
 import { format } from 'date-fns'
 
 
-export default function WorkProjeto() {
+export default function WorkProjeto(props) {
     const [listTarefas, setListTarefas] = useState({ andamento: [], afazer: [], concluido: [] })
     const [statusModal, setStatusModal] = useState({ status: false, categoria: '' })
     useEffect(() => {
         function getTarefas() {
+            let local = props.location
+            console.log(local)
             // let tarefas = { ...listTarefas }
             // let tarefaExemplo = { ...tarefa }
             // tarefaExemplo.nome = 'Criar Pagina'
