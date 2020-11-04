@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react'
 import './style.css'
 import iconAdd from '../../Icon/icon-content-add_24px.png'
 import PopUpNewCard from '../../components/PopUpNewCard'
-import { compareDesc, format, isFuture, isPast } from 'date-fns'
+import { format } from 'date-fns'
 
 
 export default function WorkProjeto() {
-    const [tarefa, setTarefa] = useState({ nome: '', descricao: '', status: '', dataEntrega: '', color: 'white' })
     const [listTarefas, setListTarefas] = useState({ andamento: [], afazer: [], concluido: [] })
     const [statusModal, setStatusModal] = useState({ status: false, categoria: '' })
     useEffect(() => {
