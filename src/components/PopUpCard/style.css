@@ -1,0 +1,52 @@
+.bodyCardModal {
+    display: block;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 10px;
+    border-bottom: #ddd 1px solid;
+}
+.topBody {
+    border-bottom: #ddd 1px solid;
+    padding-bottom: 5px;
+    text-align: initial;
+    margin-bottom: 5px;
+    display: flex;
+}
+.selectStatus {
+    margin-left: auto;
+}
+.labelCardModal {
+    margin: 5px;
+    border-bottom: #ddd 1px solid;
+    text-align: center;
+}
+.labelCardModal > input {
+    font: normal normal bold 23px/30px "Playfair Display";
+    letter-spacing: 0px;
+    opacity: 1;
+    margin: auto;
+    margin-left: 14px;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    color: rgb(88 88 88 / 90%);
+}
+.labelCardModal > input#data {
+    font: normal normal bold 15px/30px 'Roboto';
+    letter-spacing: 0px;
+    opacity: 1;
+    margin: auto;
+    margin-left: 2px;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    color: rgb(88 88 88 / 90%);
+    width: 90px;
+}
+.labelCardModal > label {
+    width: 118px;
+}
+.ck.ck-editor__main>.ck-editor__editable {
+    height: 200px;
+}
