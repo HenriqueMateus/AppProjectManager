@@ -10,7 +10,7 @@ setDefaultLocale('pt-BR')
 
 export default function PopUpNewCard(props) {
     const { status, setState, categoria } = props
-    const [card, setCard] = useState({ nome: null, descricao: '', categoria: '', dataEntrega: new Date(), color: 'white'})
+    const [card, setCard] = useState({ nome: '', descricao: '', categoria: '', dataEntrega: new Date(), color: 'white'})
     const [dataFinal, setDataFinal] = useState()
     useEffect(() => {
         return setCard({ nome: '', descricao: '', categoria: '',  dataEntrega: new Date(), color: 'white'})
@@ -27,10 +27,18 @@ export default function PopUpNewCard(props) {
         setCard(novoCard)
     }
     const adicionarCard = () => {
+        let listCards = sessionStorage.getItem('card')
+        let listaTarefas = listCards.split('},')
         if (card.nome) {
-            sessionStorage.removeItem('card')
             let stringCard = JSON.stringify(card)
-            sessionStorage.setItem('card', stringCard)
+            if(listaTarefas[0].endsWith("}")){
+                listCards += ','+ stringCard
+            } else {
+                listCards += stringCard
+            }
+            console.log(listCards)
+            
+            sessionStorage.setItem('card', listCards)
             setState(false)
         } else {
             alert('Favor Inserir o nome da tarefa')
@@ -53,7 +61,7 @@ export default function PopUpNewCard(props) {
                 </div>
                 <div className='labelModal'>
                     <label>Nome:</label>
-                    <input type='text' value={card.nome} maxlength="25" onChange={nomeChange}></input>
+                    <input type='text' value={card.nome} maxLength="25" onChange={nomeChange}></input>
                     <br/> 
                     <label>Data Entrega:</label>
                     <DatePicker

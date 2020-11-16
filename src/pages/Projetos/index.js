@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import { Done, ViewList, Input } from '@material-ui/icons';
-import './style.css'
 import { Link } from 'react-router-dom';
+import './style.css'
+
 export default function Projetos(params) {
     const [openBar, setOpenBar] = useState(false)
     // const [list, setList] = useState([])

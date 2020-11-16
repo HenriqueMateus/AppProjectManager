@@ -15,12 +15,13 @@ function Rotas() {
             <Switch>
                 <Route path="/" exact component={App} />
                 <Route path="/Projetos" exact component={Projetos} />
-                <Route path="/Projetos/Orgprojeto" exact component={WorkProjeto}/>
+                <Route path="/Projetos/Orgprojeto" component={WorkProjeto}/>
                 {
-                    listaProjetos?.map((protejo)=>
-                        <Route path={"/Projetos/Orgprojeto/"+ protejo} component={WorkProjeto}/>
+                    listaProjetos?.map((protejo, index)=>
+                        <Route key={index} path={"/Projetos/Orgprojeto/"+ protejo} component={WorkProjeto}/>
                     )
                 }
+                
                 <Route path="/cadastro" component={Cadastro} />
             </Switch>
         </ BrowserRouter>

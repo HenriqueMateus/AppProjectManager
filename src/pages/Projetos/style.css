@@ -66,13 +66,15 @@
 .barList {
     width: 110px;
     background: #ccc;
-    height: 200px;
+    min-height: 50px;
+    max-height: 110px;
+    margin-bottom: auto;
 }
 .barList > ul {
     list-style: none;
     padding: 0px;
     margin: 5px;
-    height: 200px;
+    height: auto;
 }
 .barList > ul > li {
     padding-bottom: 10px;
