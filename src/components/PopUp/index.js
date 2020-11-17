@@ -43,7 +43,9 @@ export default function PopUp({status, setStatus}) {
                     </div>
                     
                     <ul>
-                        <li>Mateus</li>
+                        <li>Mateus
+                            
+                        </li>
                         <li>henrique</li>
                         <li>Oliveira</li>
                         <li>Eduardo</li>
