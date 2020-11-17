@@ -21,3 +21,34 @@
 .topList > label#titleList{
     margin-right: auto;
 }
+.topEnd {
+    display: grid;
+    border-bottom: #ddd 1px solid;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.topEnd > button{
+    height: 40px;
+    border: black solid 1px;
+    font: normal normal bold 17px/30px Roboto;
+}
+.endList > button#ExcluirProj {
+    margin-right: 33%;
+    background-color: #ff0000ad;
+}
+.endList > button#modificarProj {
+    margin-right: 35%;
+    background-color: #005affad;
+    width: 65px;
+    
+}
+.endList > button#salvarProj {
+    background-color: #24b513ad;
+    
+}
+.endList > button {
+    border: none;
+    width: 60px;
+    color: aliceblue;
+    height: 30px;
+}

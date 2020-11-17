@@ -10,7 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function PopUp({status, setStatus}) {
     return (
         <section>
-            <Modal visible={status} width='600' height='600' effect='fadeInUp'
+            <Modal visible={status} width='600' height='650' effect='fadeInUp'
                 onClickAway={() => setStatus(false)}>
                 <div className='labelCardModal'>
                     <h2>Projeto TAL</h2>
@@ -61,7 +61,11 @@ export default function PopUp({status, setStatus}) {
                         <li>Eduardo</li>
                     </ul>
                     <div className='endList'>
-                        <button>Adicionar Participante</button>
+                        <div className='topEnd'><button >Adicionar Participante</button></div>
+                        <button id='ExcluirProj'>Excluir</button>
+                        <button id='modificarProj'>Modificar</button>
+                        <button id='salvarProj'>Salvar</button>
+                        
                     </div>
                     
                 </div>
