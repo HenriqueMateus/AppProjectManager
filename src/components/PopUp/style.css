@@ -1,0 +1,23 @@
+.endPopUp{
+    text-align: end;
+    margin: 10px 5px;
+}
+.endPopUp > ul {
+    list-style: none;
+    padding: 0;
+    text-align: initial;
+    padding-left: 15px;
+    overflow-y: scroll;
+    height: 100px;
+}
+.endPopUp > ul > li {
+    border-bottom: #333 1px solid;
+}
+.topList {
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: #ddd 1px solid;
+}
+.topList > label#titleList{
+    margin-right: auto;
+}

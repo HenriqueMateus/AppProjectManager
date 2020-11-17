@@ -4,11 +4,13 @@ import iconAdd from '../../Icon/icon-content-add_24px.png'
 import PopUpNewCard from '../../components/PopUpNewCard'
 import { format } from 'date-fns'
 import PopUpCard from '../../components/PopUpCard'
-
+import {Settings } from '@material-ui/icons'
+import PopUp from '../../components/PopUp'
 export default function WorkProjeto(props) {
     const [listTarefas, setListTarefas] = useState({ andamento: [], afazer: [], concluido: [] })
-    const [statusModal, setStatusModal] = useState({ status: false, categoria: '' })
     const [cardModal, setCardModal] = useState({ tarefa: {}, status: false })
+    const [statusModal, setStatusModal] = useState({ status: false, categoria: '' })
+    const [statusConfig, setStatusConfig] = useState(false)
     useEffect(() => {
         function getTarefas() {
             let local = props.location
@@ -92,7 +94,7 @@ export default function WorkProjeto(props) {
                 </div>
                 <div className='centroBarr'>
                     <h4>Pesquisador: Rachel </h4>
-                    <button>Membros</button>
+                    <a onClick={()=>setStatusConfig(true)}><Settings/></a>
                 </div>
                 <div className='direitaBarr'>
                     <h4>Inicio: 10/05/2020 </h4>
@@ -162,6 +164,8 @@ export default function WorkProjeto(props) {
             </PopUpNewCard>
             <PopUpCard tarefa={cardModal.tarefa} status={cardModal.status} setState={setCardModal}>
             </PopUpCard>
+            <PopUp status={statusConfig} setStatus={setStatusConfig}>
+            </PopUp>
         </>
 
     )
