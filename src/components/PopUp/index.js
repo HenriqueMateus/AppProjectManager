@@ -7,7 +7,7 @@ import ptBr from 'date-fns/locale/pt-BR';
 import './style.css'
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function PopUp({status, setStatus}) {
+export default function PopUp({ status, setStatus }) {
     return (
         <section>
             <Modal visible={status} width='600' height='650' effect='fadeInUp'
@@ -41,35 +41,37 @@ export default function PopUp({status, setStatus}) {
                         <label>Pesquisar: </label>
                         <input type='text'></input>
                     </div>
-                    
-                    <ul>
-                        <li>Mateus
-                            
-                        </li>
-                        <li>henrique</li>
-                        <li>Oliveira</li>
-                        <li>Eduardo</li>
-                        <li>Mateus</li>
-                        <li>henrique</li>
-                        <li>Oliveira</li>
-                        <li>Eduardo</li>
-                        <li>Mateus</li>
-                        <li>henrique</li>
-                        <li>Oliveira</li>
-                        <li>Eduardo</li>
-                        <li>Mateus</li>
-                        <li>henrique</li>
-                        <li>Oliveira</li>
-                        <li>Eduardo</li>
-                    </ul>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Mateus Henrique de Oliveira</td>
+                                <td>Estudante</td>
+                                <td>icon1</td>
+                                <td>icon2</td>
+                            </tr>
+                            <tr>
+                                <td>Mateus Henrique de Oliveira</td>
+                                <td>Estudante</td>
+                                <td>icon1</td>
+                                <td>icon2</td>
+                            </tr>
+                            <tr>
+                                <td>Mateus Henrique de Oliveira</td>
+                                <td>Estudante</td>
+                                <td>icon1</td>
+                                <td>icon2</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <div className='endList'>
                         <div className='topEnd'><button >Adicionar Participante</button></div>
                         <button id='ExcluirProj'>Excluir</button>
                         <button id='modificarProj'>Modificar</button>
                         <button id='salvarProj'>Salvar</button>
-                        
+
                     </div>
-                    
+
                 </div>
             </Modal>
         </section>
