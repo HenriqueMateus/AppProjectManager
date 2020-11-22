@@ -35,15 +35,28 @@ function App({ history }) {
     setUsuario(pessoa)
   }
   return (
-    <div >
-      <label>Login</label>
-      <input name="Usuario" value={usuario.usuario} onChange={(e) => setUsuarioNome(e)}></input>
-      <input name="Senha" value={usuario.senha} onChange={(e) => setUsuarioSenha(e)}></input>
-      <button onClick={consultaCredenciais}>Entrar</button>
-      <div>
-        <button></button>
-      </div>
-    </div>
+   
+
+        <div className='contentFormLogin'>
+           <div className="rows">
+            <h2>Login</h2>
+              <div className='row'>Usuario</div>
+                <input type="text" />
+                <div className='row'>Senha</div>
+                <input type="text"/>
+    
+          </div>
+      <div className='overCadastro'>
+             <button>Login</button>
+          
+
+</div>
+
+
+
+        </div>
+    
+   
   );
 }
 
